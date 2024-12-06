@@ -1,0 +1,11 @@
+# Node.js dependencies
+node_modules/
+
+# Lambda deployment package
+*.zip
+
+# Terraform state files and sensitive info
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
