@@ -84,13 +84,13 @@ resource "aws_iam_role_policy_attachment" "lambda_fn_role_attachment" {
   policy_arn = aws_iam_policy.lambda_fn_policy.arn
 }
 
-# Create the Lambda function now that the IAM role and policy are set up
+# Define the Lambda function now that the IAM role and policy are set up
 resource "aws_lambda_function" "json_handler" {
   function_name = "json_handler"
   role          = aws_iam_role.lambda_fn_role.arn
-  handler       = "lambda_function.handler" # Name of the lambda_function (for this one its name will be "handler", so in the labda_function.js file it must be exported as handler, so exports.handler)
+  handler       = "lambda_function.handler" # Name of the lambda_function (for this one its name will be "handler", so in the lambda_function.js file it must be exported as handler, so exports.handler)
   runtime       = "nodejs16.x" # Lambda function runtime, used the latest version of nodejs that it supports
-  filename      = "../lambda_function_new.zip"
+  filename      = "../lambda_function.zip"
 
   # Enviroment variables for the Lambda function
   environment {
