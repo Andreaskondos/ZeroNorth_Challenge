@@ -21,7 +21,7 @@ exports.handler = async (event) => {
       const numbers = fileContents.numbers || []; // Ensure numbers is an array or default to an empty array
       const sum = numbers.reduce((acc, num) => acc + num, 0);
       console.log(`The sum of all the numbers in the JSON file is: ${sum}`);
-      console, log(`FILE: ${objectKey} | SUM: ${sum}`);
+      console.log(`FILE: ${objectKey} | SUM: ${sum}`);
     }
   } catch (err) {
     console.error(`Error while triggering Lambda function: ${err?.message}`);
